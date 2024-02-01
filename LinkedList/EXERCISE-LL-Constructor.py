@@ -65,9 +65,13 @@ class LinkedList:
         #2 scenarios - where list is empty and list is not empty
         if self.length == 0:
             self.head = self.tail = new_node
-            new_node.next = None
-        
+            new_node.next = None  
+        else:
+            new_node.next = self.head            
+            self.head = new_node
 
+        self.length += 1
+        return True
     # def insert(self,index,value):
 
 
