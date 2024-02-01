@@ -109,3 +109,8 @@ my_linked_list.prepend(444)
 print('Head:', my_linked_list.head.value)
 print('Tail:', my_linked_list.tail.value)
 print('Length:', my_linked_list.length)                                                                 
+
+my_linked_list.pop_first()
+print('Head:', my_linked_list.head.value)
+print('Tail:', my_linked_list.tail.value)
+print('Length:', my_linked_list.length)      
