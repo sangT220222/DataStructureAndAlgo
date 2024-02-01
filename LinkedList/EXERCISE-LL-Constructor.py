@@ -72,8 +72,20 @@ class LinkedList:
 
         self.length += 1
         return True
-    # def insert(self,index,value):
 
+    #popping the first item off the list
+    def pop_first(self):
+        #2 scenarios - list is empty and list is not
+        if self.length == 0:
+            return None
+        temp = self.head
+        self.head = temp.next
+        temp.next = None #always remember to make the popped item to point at None!
+        self.length -= 1
+        if self.length == 0:
+            self.tail = None 
+
+        return temp.value
 
 
 
