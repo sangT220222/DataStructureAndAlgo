@@ -20,7 +20,6 @@ class LinkedList:
             print(temp.value)
             temp = temp.next
 
-
     def append(self,value):
         new_node = Node(value)
         if self.length == 0:
@@ -33,8 +32,19 @@ class LinkedList:
             new_node.next = None
         self.length += 1
         return True
+    
+    def pop(self):
+        #for pop we need to consider 3 scenarios
+        #1. when list is empty
+        if self.length == 0:
+            return None #no point as no items to pop out
+        #2. when lenght of list is 1
+        #3. when list is more than 1
+        #we want 2 temp nodes that will store values of the items in linked list and keep track which is which
+        #this where pre and temp will be effective
 
-        # def prepend(self,value):
+
+    # def prepend(self,value):
 
 
         # def insert(self,index,value):
@@ -44,19 +54,13 @@ class LinkedList:
 
  
 my_linked_list = LinkedList(4)
+my_linked_list.append(69)
 
 print('Head:', my_linked_list.head.value)
 print('Tail:', my_linked_list.tail.value)
 print('Length:', my_linked_list.length)
 
 
-"""
-    EXPECTED OUTPUT:
-    ----------------
-    Head: 4
-    Tail: 4
-    Length: 1
-    
-"""
+my_linked_list.print_LL()
 
                                                                                                                     
