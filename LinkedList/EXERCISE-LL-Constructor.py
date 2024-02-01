@@ -51,7 +51,7 @@ class LinkedList:
             temp = temp.next 
         #at the end of this loop, expect temp to be the last item you want to pop, whereas pre is our new last item(second last item)
         
-        self.tail = pre
+        self.tail = pre #hence we have set self.tail to be the new lat item - which was the second last item before
         self.tail.next = None
         self.length -= 1
         if self.length == 0: #here is where Scenario 2 happens - when one item is in the list
@@ -59,11 +59,16 @@ class LinkedList:
 
         return temp.value
 
+    #function below adds at the beginning of the list
+    def prepend(self,value):
+        new_node = Node(value)
+        #2 scenarios - where list is empty and list is not empty
+        if self.length == 0:
+            self.head = self.tail = new_node
+            new_node.next = None
+        
 
-    # def prepend(self,value):
-
-
-        # def insert(self,index,value):
+    # def insert(self,index,value):
 
 
 
