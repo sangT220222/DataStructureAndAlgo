@@ -86,6 +86,14 @@ class LinkedList:
             self.tail = None 
 
         return temp.value
+    
+    def get_value(self, index):
+        if index < 0 or index > self.length:
+            return None
+        temp =self.head
+        for _ in range(index): #underscore is used as we normally put i,j there before, but here we aren't using it
+            temp = temp.next
+        return temp.value
 
 
 
