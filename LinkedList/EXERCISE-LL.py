@@ -137,6 +137,16 @@ class LinkedList:
         self.length -= 1
 
         return temp
+    
+    def reverse(self):
+        #first thing we want to do is swap head and tail together
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+
+        #we have 2 variables that will keep track of the before and after variable to make reverse easier
+        after = temp.next
+        before = None #this is None so that the initial head will point to this whilst we iterate through the list
 
 my_linked_list = LinkedList(4)
 my_linked_list.append(69)
