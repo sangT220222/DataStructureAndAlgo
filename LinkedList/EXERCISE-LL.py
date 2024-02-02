@@ -106,10 +106,17 @@ class LinkedList:
     def insert(self, index, value):
         if index < 0 or index > self.length:
             return False
+        
+        if index == 0:
+            self.prepend(value)
+
         #as we will  be inserting a new value in the desired index, we want to get temp to be the item before the desired index
         temp = self.get_value(index - 1)
         new_node = Node(value)
-        
+        new_node.next = temp.next
+        temp.next = new_node
+        self.length += 1
+        return True
  
 my_linked_list = LinkedList(4)
 my_linked_list.append(69)
@@ -138,3 +145,5 @@ print('Length:', my_linked_list.length)
 
 # print(my_linked_list.get_value(1))
 # print(my_linked_list.set_value(1,69))
+my_linked_list.insert(2,63)
+my_linked_list.print_LL()
