@@ -93,7 +93,7 @@ class LinkedList:
         temp = self.head
         for _ in range(index): #underscore is used as we normally put i,j there before, but here we aren't using it
             temp = temp.next
-        return temp.value
+        return temp
 
     def set_value(self, index, value):
         #check if index is in the length of linked list
@@ -127,3 +127,6 @@ my_linked_list.pop_first()
 print('Head:', my_linked_list.head.value)
 print('Tail:', my_linked_list.tail.value)
 print('Length:', my_linked_list.length)      
+
+# print(my_linked_list.get_value(1))
+# print(my_linked_list.set_value(1,69))
