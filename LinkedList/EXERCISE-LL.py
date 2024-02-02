@@ -148,35 +148,45 @@ class LinkedList:
         after = temp.next
         before = None #this is None so that the initial head will point to this whilst we iterate through the list
 
+        for _ in range(self.length):
+            after = temp.next #this will apply once it's done with 1st iteration
+            temp.next = before #beginning of the reversal process
+            before = temp #this moves along the list, so before will move to the next node which is temp
+            temp = after #temp will then be the next node, which is after
+
+
 my_linked_list = LinkedList(4)
 my_linked_list.append(69)
 my_linked_list.append(63)
 
-print('Head:', my_linked_list.head.value)
-print('Tail:', my_linked_list.tail.value)
-print('Length:', my_linked_list.length)
+# print('Head:', my_linked_list.head.value)
+# print('Tail:', my_linked_list.tail.value)
+# print('Length:', my_linked_list.length)
 
 
-my_linked_list.print_LL()
-my_linked_list.pop()
-print('Length:', my_linked_list.length)
-print('Tail:', my_linked_list.tail.value)
-my_linked_list.print_LL()
-my_linked_list.prepend(444)
+# my_linked_list.print_LL()
+# my_linked_list.pop()
+# print('Length:', my_linked_list.length)
+# print('Tail:', my_linked_list.tail.value)
+# my_linked_list.print_LL()
+# my_linked_list.prepend(444)
               
-print('Head:', my_linked_list.head.value)
-print('Tail:', my_linked_list.tail.value)
-print('Length:', my_linked_list.length)                                                                 
+# print('Head:', my_linked_list.head.value)
+# print('Tail:', my_linked_list.tail.value)
+# print('Length:', my_linked_list.length)                                                                 
 
-my_linked_list.pop_first()
-print('Head:', my_linked_list.head.value)
-print('Tail:', my_linked_list.tail.value)
-print('Length:', my_linked_list.length)      
+# my_linked_list.pop_first()
+# print('Head:', my_linked_list.head.value)
+# print('Tail:', my_linked_list.tail.value)
+# print('Length:', my_linked_list.length)      
 
 # print(my_linked_list.get_value(1))
 # print(my_linked_list.set_value(1,69))
-my_linked_list.insert(2,63)
-my_linked_list.print_LL()
+# my_linked_list.insert(2,63)
+# my_linked_list.print_LL()
 
-my_linked_list.remove(1)
+# my_linked_list.remove(1)
+
+my_linked_list.print_LL()
+my_linked_list.reverse()
 my_linked_list.print_LL()
