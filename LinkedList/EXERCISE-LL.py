@@ -90,13 +90,18 @@ class LinkedList:
     def get_value(self, index):
         if index < 0 or index > self.length:
             return None
-        temp =self.head
+        temp = self.head
         for _ in range(index): #underscore is used as we normally put i,j there before, but here we aren't using it
             temp = temp.next
         return temp.value
 
-
-
+    def set_value(self, index, value):
+        #check if index is in the length of linked list
+        temp = self.get_value(index) #utilise the get method created 
+        if temp: #if temp exists
+            temp.value = value
+            return True
+        return False
  
 my_linked_list = LinkedList(4)
 my_linked_list.append(69)
