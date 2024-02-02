@@ -117,7 +117,27 @@ class LinkedList:
         temp.next = new_node
         self.length += 1
         return True
- 
+    
+    def remove(self,index):
+        #scenario where index is not existent in the list
+        if index < 0 or index > self.length:
+            return None
+        
+        if index == 0:
+            self.pop_first()
+
+        if index == self.length - 1:
+            self.pop()
+
+        prev = self.get_value(index - 1)
+        temp = prev.next #reason why we dind't use self.get_value as it's O(n), where as this is O(1)
+
+        prev.next = temp.next
+        temp.next = None #point this to nowhere as this node has been removed
+        self.length -= 1
+
+        return temp
+
 my_linked_list = LinkedList(4)
 my_linked_list.append(69)
 my_linked_list.append(63)
@@ -146,4 +166,7 @@ print('Length:', my_linked_list.length)
 # print(my_linked_list.get_value(1))
 # print(my_linked_list.set_value(1,69))
 my_linked_list.insert(2,63)
+my_linked_list.print_LL()
+
+my_linked_list.remove(1)
 my_linked_list.print_LL()
