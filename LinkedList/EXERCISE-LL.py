@@ -57,7 +57,7 @@ class LinkedList:
         if self.length == 0: #here is where Scenario 2 happens - when one item is in the list
             self.tail = self.head = None
 
-        return temp.value
+        return temp
 
     #function below adds at the beginning of the list
     def prepend(self,value):
@@ -85,7 +85,7 @@ class LinkedList:
         if self.length == 0:
             self.tail = None 
 
-        return temp.value
+        return temp
     
     def get_value(self, index):
         if index < 0 or index > self.length:
