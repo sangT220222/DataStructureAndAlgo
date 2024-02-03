@@ -166,6 +166,17 @@ class LinkedList:
             slow = slow.next
             fast = fast.next.ext #this will make fast move 2 nodes 
         return slow
+    
+    def has_loop(self): #method is to see if the linked list has a cycle or not
+        slow = fast = self.head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            if fast == slow:
+                return True #cycle is found
+        return False
+
+
 
 my_linked_list = LinkedList(4)
 my_linked_list.append(69)
