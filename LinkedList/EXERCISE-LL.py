@@ -109,7 +109,10 @@ class LinkedList:
             return False
         
         if index == 0:
-            self.prepend(value)
+            return self.prepend(value)
+
+        if index == self.length:
+            return self.append(value)
 
         #as we will  be inserting a new value in the desired index, we want to get temp to be the item before the desired index
         temp = self.get_value(index - 1)
