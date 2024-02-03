@@ -124,14 +124,14 @@ class LinkedList:
     
     def remove(self,index):
         #scenario where index is not existent in the list
-        if index < 0 or index > self.length:
+        if index < 0 or index >= self.length:
             return None
         
         if index == 0:
-            self.pop_first()
+            return self.pop_first()
 
         if index == self.length - 1:
-            self.pop()
+            return self.pop()
 
         prev = self.get_value(index - 1)
         temp = prev.next #reason why we dind't use self.get_value as it's O(n), where as this is O(1)
