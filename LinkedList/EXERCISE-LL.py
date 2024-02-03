@@ -97,11 +97,12 @@ class LinkedList:
 
     def set_value(self, index, value):
         #check if index is in the length of linked list
+        if index < 0 or index > self.length:
+            return False
         temp = self.get_value(index) #utilise the get method created 
-        if temp: #if temp exists
-            temp.value = value
-            return True
-        return False
+        temp.value = value
+        return True
+       
     
     def insert(self, index, value):
         if index < 0 or index > self.length:
