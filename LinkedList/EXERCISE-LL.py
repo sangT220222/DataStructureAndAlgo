@@ -160,12 +160,12 @@ class LinkedList:
 
     def middle_node(self):
         #wil have 2 pointers -> slow pointer moves 1 node at a time, fast pointer moves 2 nodes at a time
-        slow = self.head
+        slow = fast = self.head
 
         while fast.next: 
             slow = slow.next
-            fast = slow.next
-
+            fast = fast.next.ext #this will make fast move 2 nodes 
+        return slow
 
 my_linked_list = LinkedList(4)
 my_linked_list.append(69)
