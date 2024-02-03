@@ -158,6 +158,14 @@ class LinkedList:
             before = temp #this moves along the list, so before will move to the next node which is temp
             temp = after #temp will then be the next node, which is after
 
+    def middle_node(self):
+        #wil have 2 pointers -> slow pointer moves 1 node at a time, fast pointer moves 2 nodes at a time
+        slow = self.head
+
+        while fast.next: 
+            slow = slow.next
+            fast = slow.next
+
 
 my_linked_list = LinkedList(4)
 my_linked_list.append(69)
