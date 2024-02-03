@@ -162,7 +162,7 @@ class LinkedList:
         #wil have 2 pointers -> slow pointer moves 1 node at a time, fast pointer moves 2 nodes at a time
         slow = fast = self.head
 
-        while fast.next: 
+        while fast and fast.next: 
             slow = slow.next
             fast = fast.next.ext #this will make fast move 2 nodes 
         return slow
