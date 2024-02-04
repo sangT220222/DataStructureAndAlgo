@@ -176,6 +176,9 @@ class LinkedList:
                 return True #cycle is found
         return False
 
+def find_kth_from_end(list_name, index):
+    
+
 
 
 my_linked_list = LinkedList(4)
