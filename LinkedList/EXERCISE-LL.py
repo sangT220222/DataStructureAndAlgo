@@ -196,7 +196,7 @@ class LinkedList:
         #setting the end of sub lists to None
         prev1.next = None
         prev2.next = None 
-        #begging of the merge of two sublists
+        #beginning of the merge of two sublists
         prev1.next = dummy2.next 
         self.head = dummy1.next
 
