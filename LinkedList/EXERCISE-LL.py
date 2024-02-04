@@ -164,7 +164,7 @@ class LinkedList:
 
         while fast and fast.next: 
             slow = slow.next
-            fast = fast.next.ext #this will make fast move 2 nodes 
+            fast = fast.next.next #this will make fast move 2 nodes 
         return slow
     
     def has_loop(self): #method is to see if the linked list has a cycle or not
@@ -177,7 +177,16 @@ class LinkedList:
         return False
 
 def find_kth_from_end(list_name, index):
-    
+    slow = fast = list_name.head #as it's not in the LinkedList class
+    for _ in range(index):
+        if fast is None:
+            return None #this means fast pointer is out of index
+        fast = fast.next #here we are setting fast pointer k steps ahead
+
+    while fast and fast.next: #this will keep loop until fast and fast.next is not None
+        slow = slow.next
+        fast = fast.next
+    return slow
 
 
 
