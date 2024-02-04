@@ -186,7 +186,7 @@ def find_kth_from_end(list_name, index):
     while fast and fast.next: #this will keep loop until fast and fast.next is not None
         slow = slow.next
         fast = fast.next
-    return slow
+    return slow.value
 
 
 
@@ -222,6 +222,8 @@ my_linked_list.append(63)
 
 # my_linked_list.remove(1)
 
-my_linked_list.print_LL()
-my_linked_list.reverse()
-my_linked_list.print_LL()
+# my_linked_list.print_LL()
+# my_linked_list.reverse()
+# my_linked_list.print_LL()
+
+print(find_kth_from_end(my_linked_list, 2))
