@@ -188,6 +188,23 @@ def find_kth_from_end(list_name, index):
         fast = fast.next
     return slow.value
 
+def partition_list(self,x):
+    if not self.head:
+        return None
+    dummy1 = Node(0)
+    dummy2 = Node(0)
+    prev1 = dummy1
+    prev2 = dummy2
+    current = self.head
+
+    while current:
+        if current.value < x:
+            prev1.next = current
+            prev1 = prev1.next
+        else:
+            prev2.next = current
+            prev2 = prev2.next
+        
 
 
 my_linked_list = LinkedList(4)
