@@ -175,6 +175,30 @@ class LinkedList:
             if fast == slow:
                 return True #cycle is found
         return False
+    def partition_list(self,x):
+        if not self.head:
+            return None
+        dummy1 = Node(0)
+        dummy2 = Node(0)
+        prev1 = dummy1
+        prev2 = dummy2
+        current = self.head
+
+        while current:
+            if current.value < x:
+                prev1.next = current
+                prev1 = prev1.next
+            else:
+                prev2.next = current
+                prev2 = prev2.next
+            
+            current = current.next #we will increment till current is None
+        #setting the end of sub lists to None
+        prev1.next = None
+        prev2.next = None 
+        #begging of the merge of two sublists
+        prev1.next = dummy2.next 
+        self.head = dummy1.next
 
 def find_kth_from_end(list_name, index):
     slow = fast = list_name.head #as it's not in the LinkedList class
@@ -188,28 +212,11 @@ def find_kth_from_end(list_name, index):
         fast = fast.next
     return slow.value
 
-def partition_list(self,x):
-    if not self.head:
-        return None
-    dummy1 = Node(0)
-    dummy2 = Node(0)
-    prev1 = dummy1
-    prev2 = dummy2
-    current = self.head
-
-    while current:
-        if current.value < x:
-            prev1.next = current
-            prev1 = prev1.next
-        else:
-            prev2.next = current
-            prev2 = prev2.next
-        
 
 
-my_linked_list = LinkedList(4)
-my_linked_list.append(69)
-my_linked_list.append(63)
+# my_linked_list = LinkedList(4)
+# my_linked_list.append(69)
+# my_linked_list.append(63)
 
 # print('Head:', my_linked_list.head.value)
 # print('Tail:', my_linked_list.tail.value)
@@ -243,4 +250,19 @@ my_linked_list.append(63)
 # my_linked_list.reverse()
 # my_linked_list.print_LL()
 
-print(find_kth_from_end(my_linked_list, 2))
+# print(find_kth_from_end(my_linked_list, 2))
+
+ll = LinkedList(3)
+ll.append(5)
+ll.append(8)
+ll.append(10)
+ll.append(2)
+ll.append(1)
+
+print("LL before partition_list:")
+ll.print_LL() # Output: 3 5 8 10 2 1
+
+ll.partition_list(5)
+
+print("LL after partition_list:")
+ll.print_LL() # Output: 3 2 1 5 8 10
