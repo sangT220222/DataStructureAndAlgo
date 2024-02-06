@@ -225,7 +225,7 @@ class LinkedList:
             curr = curr.next
         return sum
     
-    
+
 def find_kth_from_end(list_name, index):
     slow = fast = list_name.head #as it's not in the LinkedList class
     for _ in range(index):
@@ -278,17 +278,70 @@ def find_kth_from_end(list_name, index):
 
 # print(find_kth_from_end(my_linked_list, 2))
 
-ll = LinkedList(3)
-ll.append(5)
-ll.append(8)
-ll.append(10)
-ll.append(2)
-ll.append(1)
+# ll = LinkedList(3)
+# ll.append(5)
+# ll.append(8)
+# ll.append(10)
+# ll.append(2)
+# ll.append(1)
 
-print("LL before partition_list:")
-ll.print_LL() # Output: 3 5 8 10 2 1
+# print("LL before partition_list:")
+# ll.print_LL() # Output: 3 5 8 10 2 1
 
-ll.partition_list(5)
+# ll.partition_list(5)
 
-print("LL after partition_list:")
-ll.print_LL() # Output: 3 2 1 5 8 10
+# print("LL after partition_list:")
+# ll.print_LL() # Output: 3 2 1 5 8 10
+
+# Test case 1: Binary number 110 = Decimal number 6
+linked_list = LinkedList(1)
+linked_list.append(1)
+linked_list.append(0)
+result = linked_list.binary_to_decimal()
+try:
+    assert result == 6
+    print("Test case 1 passed, returned: ", result)
+except AssertionError:
+    print("Test case 1 failed, returned: ", result)
+
+# Test case 2: Binary number 1000 = Decimal number 8
+linked_list = LinkedList(1)
+linked_list.append(0)
+linked_list.append(0)
+linked_list.append(0)
+result = linked_list.binary_to_decimal()
+try:
+    assert result == 8
+    print("Test case 2 passed, returned: ", result)
+except AssertionError:
+    print("Test case 2 failed, returned: ", result)
+
+# Test case 3: Binary number 0 = Decimal number 0
+linked_list = LinkedList(0)
+result = linked_list.binary_to_decimal()
+try:
+    assert result == 0
+    print("Test case 3 passed, returned: ", result)
+except AssertionError:
+    print("Test case 3 failed, returned: ", result)
+
+# Test case 4: Binary number 1 = Decimal number 1
+linked_list = LinkedList(1)
+result = linked_list.binary_to_decimal()
+try:
+    assert result == 1
+    print("Test case 4 passed, returned: ", result)
+except AssertionError:
+    print("Test case 4 failed, returned: ", result)
+
+# Test case 5: Binary number 1101 = Decimal number 13
+linked_list = LinkedList(1)
+linked_list.append(1)
+linked_list.append(0)
+linked_list.append(1)
+result = linked_list.binary_to_decimal()
+try:
+    assert result == 13
+    print("Test case 5 passed, returned: ", result)
+except AssertionError:
+    print("Test case 5 failed, returned: ", result)
