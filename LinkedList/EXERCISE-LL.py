@@ -206,7 +206,7 @@ class LinkedList:
         curr = self.head
 
         while curr:
-            if curr in values:
+            if curr.value in values:
                 prev.next = curr.next
                 self.length -= 1
             else:
