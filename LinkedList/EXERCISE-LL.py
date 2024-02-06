@@ -213,8 +213,19 @@ class LinkedList:
                 prev = curr
                 values.add(curr.value)
             curr = curr.next
-        
 
+    def binary_to_decimal(self):
+        sum = 0
+        power = self.length - 1
+        curr = self.head
+        
+        while curr:
+            sum += curr.value * (2**power)
+            power -= 1
+            curr = curr.next
+        return sum
+    
+    
 def find_kth_from_end(list_name, index):
     slow = fast = list_name.head #as it's not in the LinkedList class
     for _ in range(index):
