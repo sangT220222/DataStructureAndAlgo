@@ -200,6 +200,21 @@ class LinkedList:
         prev1.next = dummy2.next 
         self.head = dummy1.next
 
+    def remove_duplicates(self):
+        values = set() #sets only contain unique values
+        prev = None
+        curr = self.head
+
+        while curr:
+            if curr in values:
+                prev.next = curr.next
+                self.length -= 1
+            else:
+                prev = curr
+                values.add(curr.value)
+            curr = curr.next
+        
+
 def find_kth_from_end(list_name, index):
     slow = fast = list_name.head #as it's not in the LinkedList class
     for _ in range(index):
