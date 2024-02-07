@@ -302,54 +302,119 @@ def find_kth_from_end(list_name, index):
 # ll.print_LL() # Output: 3 2 1 5 8 10
 
 # Test case 1: Binary number 110 = Decimal number 6
-linked_list = LinkedList(1)
-linked_list.append(1)
-linked_list.append(0)
-result = linked_list.binary_to_decimal()
-try:
-    assert result == 6
-    print("Test case 1 passed, returned: ", result)
-except AssertionError:
-    print("Test case 1 failed, returned: ", result)
+# linked_list = LinkedList(1)
+# linked_list.append(1)
+# linked_list.append(0)
+# result = linked_list.binary_to_decimal()
+# try:
+#     assert result == 6
+#     print("Test case 1 passed, returned: ", result)
+# except AssertionError:
+#     print("Test case 1 failed, returned: ", result)
 
-# Test case 2: Binary number 1000 = Decimal number 8
-linked_list = LinkedList(1)
-linked_list.append(0)
-linked_list.append(0)
-linked_list.append(0)
-result = linked_list.binary_to_decimal()
-try:
-    assert result == 8
-    print("Test case 2 passed, returned: ", result)
-except AssertionError:
-    print("Test case 2 failed, returned: ", result)
+# # Test case 2: Binary number 1000 = Decimal number 8
+# linked_list = LinkedList(1)
+# linked_list.append(0)
+# linked_list.append(0)
+# linked_list.append(0)
+# result = linked_list.binary_to_decimal()
+# try:
+#     assert result == 8
+#     print("Test case 2 passed, returned: ", result)
+# except AssertionError:
+#     print("Test case 2 failed, returned: ", result)
 
-# Test case 3: Binary number 0 = Decimal number 0
-linked_list = LinkedList(0)
-result = linked_list.binary_to_decimal()
-try:
-    assert result == 0
-    print("Test case 3 passed, returned: ", result)
-except AssertionError:
-    print("Test case 3 failed, returned: ", result)
+# # Test case 3: Binary number 0 = Decimal number 0
+# linked_list = LinkedList(0)
+# result = linked_list.binary_to_decimal()
+# try:
+#     assert result == 0
+#     print("Test case 3 passed, returned: ", result)
+# except AssertionError:
+#     print("Test case 3 failed, returned: ", result)
 
-# Test case 4: Binary number 1 = Decimal number 1
-linked_list = LinkedList(1)
-result = linked_list.binary_to_decimal()
-try:
-    assert result == 1
-    print("Test case 4 passed, returned: ", result)
-except AssertionError:
-    print("Test case 4 failed, returned: ", result)
+# # Test case 4: Binary number 1 = Decimal number 1
+# linked_list = LinkedList(1)
+# result = linked_list.binary_to_decimal()
+# try:
+#     assert result == 1
+#     print("Test case 4 passed, returned: ", result)
+# except AssertionError:
+#     print("Test case 4 failed, returned: ", result)
 
-# Test case 5: Binary number 1101 = Decimal number 13
+# # Test case 5: Binary number 1101 = Decimal number 13
+# linked_list = LinkedList(1)
+# linked_list.append(1)
+# linked_list.append(0)
+# linked_list.append(1)
+# result = linked_list.binary_to_decimal()
+# try:
+#     assert result == 13
+#     print("Test case 5 passed, returned: ", result)
+# except AssertionError:
+#     print("Test case 5 failed, returned: ", result)
+
+
 linked_list = LinkedList(1)
-linked_list.append(1)
-linked_list.append(0)
-linked_list.append(1)
-result = linked_list.binary_to_decimal()
-try:
-    assert result == 13
-    print("Test case 5 passed, returned: ", result)
-except AssertionError:
-    print("Test case 5 failed, returned: ", result)
+linked_list.append(2)
+linked_list.append(3)
+linked_list.append(4)
+linked_list.append(5)
+
+print("Original linked list: ")
+linked_list.print_list()
+
+# Reverse a sublist within the linked list
+linked_list.reverse_between(2, 4)
+print("Reversed sublist (2, 4): ")
+linked_list.print_list()
+
+# Reverse another sublist within the linked list
+linked_list.reverse_between(0, 4)
+print("Reversed entire linked list: ")
+linked_list.print_list()
+
+# Reverse a sublist of length 1 within the linked list
+linked_list.reverse_between(3, 3)
+print("Reversed sublist of length 1 (3, 3): ")
+linked_list.print_list()
+
+# Reverse an empty linked list
+empty_list = LinkedList(0)
+empty_list.make_empty
+empty_list.reverse_between(0, 0)
+print("Reversed empty linked list: ")
+empty_list.print_list()
+
+
+"""
+    EXPECTED OUTPUT:
+    ----------------
+    Original linked list: 
+    1
+    2
+    3
+    4
+    5
+    Reversed sublist (2, 4): 
+    1
+    2
+    5
+    4
+    3
+    Reversed entire linked list: 
+    3
+    4
+    5
+    2
+    1
+    Reversed sublist of length 1 (3, 3): 
+    3
+    4
+    5
+    2
+    1
+    Reversed empty linked list: 
+    None
+    
+"""
