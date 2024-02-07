@@ -231,9 +231,16 @@ class LinkedList:
         prev = dummy
         for _ in range(m):
             prev = prev.next
-        for _ in range(n):
-            end = end.next
-        
+
+        curr = prev.next
+
+        for _ in range(n-m):
+            node_move = curr.next
+            curr.next = node_move.next
+            node_move.next = prev.next
+            prev.next = node_move
+            
+        self.head = dummy.next
     
 
 def find_kth_from_end(list_name, index):
