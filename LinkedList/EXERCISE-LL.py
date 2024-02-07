@@ -226,9 +226,11 @@ class LinkedList:
         return sum
     
     def reverse_between(self, m, n):
-        start = end = self.head
+        dummy = Node(0)
+        dummy.next = self.head
+        prev = dummy
         for _ in range(m):
-            start = start.next
+            prev = prev.next
         for _ in range(n):
             end = end.next
         
@@ -362,29 +364,29 @@ linked_list.append(4)
 linked_list.append(5)
 
 print("Original linked list: ")
-linked_list.print_list()
+linked_list.print_LL()
 
 # Reverse a sublist within the linked list
 linked_list.reverse_between(2, 4)
 print("Reversed sublist (2, 4): ")
-linked_list.print_list()
+linked_list.print_LL()
 
 # Reverse another sublist within the linked list
 linked_list.reverse_between(0, 4)
 print("Reversed entire linked list: ")
-linked_list.print_list()
+linked_list.print_LL()
 
 # Reverse a sublist of length 1 within the linked list
 linked_list.reverse_between(3, 3)
 print("Reversed sublist of length 1 (3, 3): ")
-linked_list.print_list()
+linked_list.print_LL()
 
 # Reverse an empty linked list
 empty_list = LinkedList(0)
 empty_list.make_empty
 empty_list.reverse_between(0, 0)
 print("Reversed empty linked list: ")
-empty_list.print_list()
+empty_list.print_LL()
 
 
 """
