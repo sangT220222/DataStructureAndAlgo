@@ -225,6 +225,14 @@ class LinkedList:
             curr = curr.next
         return sum
     
+    def reverse_between(self, m, n):
+        start = end = self.head
+        for _ in range(m):
+            start = start.next
+        for _ in range(n):
+            end = end.next
+        
+    
 
 def find_kth_from_end(list_name, index):
     slow = fast = list_name.head #as it's not in the LinkedList class
